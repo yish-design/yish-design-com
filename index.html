@@ -7,11 +7,16 @@
   <meta name="description" content="Free download theme onepage, clean and modern responsive for all" /> 
   <meta name="keywords" content="responsive, html5, onepage, themes, template, clean layout, free web" /> 
   <meta name="author" content="Thomsoon.com" /> 
-  <link rel="shortcut icon" href="./build/img/favicon.png" /> 
+  <link rel="shortcut icon" href="./build/img/favicon.ico" /> 
   <link rel="stylesheet" type="text/css" href="./build/css/app.css" /> 
   <!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]--> 
+  <script type="text/javascript">
+			try {
+				Typekit.load();
+			} catch(e) {}
+		</script>
  </head> 
  <body> 
   <div class="preloader" id="preloader"> 
@@ -47,7 +52,7 @@
       YISH <i>design.</i>
      </div> 
      <div class="icon">
-      <a href="#"><img src="./build/img/icons/menu-media.png" /></a>
+      <a href="javascript:void(0);"><img src="./build/img/icons/menu-media.png" /></a>
      </div> 
     </div> 
    </section> 
@@ -70,19 +75,86 @@
       <li><a href="#contact">联系我们</a></li> 
      </ul> 
     </div> 
-   </section> 
+   </section>
+   <div class="clear"></div>
    <!-- section about us --> 
    <section class="about-us" id="about-us"> 
     <div class="content"> 
-     <h1 class="title">关于我们</h1> 
-     <h1 class="title-en">ABOUT US</h1> 
-     <hr /> 
-     <p class="describe">我们励志于将视觉元素与设计研究相结合，将更好的视觉感受运用于商业之中。真正将美好的设计融入你我的生活。</p> 
-     <p class="describe-en">we are committed to enriching your life with our wonderful designs, which feature visual elements and bring you better visual sensation.</p> 
+      <h1 class="title">关于我们</h1> 
+      <h1 class="title-en">ABOUT US</h1> 
+      <hr /> 
+      <p class="describe">我们励志于将视觉元素与设计研究相结合，将更好的视觉感受运用于商业之中。真正将美好的设计融入你我的生活。</p> 
+      <p class="describe-en">we are committed to enriching your life with our wonderful designs, which feature
+          visual elements and bring you better visual sensation.</p> 
+      <div class="team-wrap">
+          <div class="team-col">
+            <div class="team-li" data-show="enter bottom over .3s after 0.4s">
+              <div class="thumb">
+                <img src="./build/img/team/van-1.png" alt="">
+              </div>
+              <div class="thumb2">
+                <img src="./build/img/team/van-2.png" alt="">
+              </div>
+              <div class="name">Van</div>
+              <div class="position">设计总监</div>
+            </div>
+            <div class="team-li" data-show="enter bottom over .3s after 0.8s">
+              <div class="thumb">
+                <img src="./build/img/team/ash-1.png" alt="">
+              </div>
+              <div class="thumb2">
+                <img src="./build/img/team/ash-2.png" alt="">
+              </div>
+              <div class="name">ash</div>
+              <div class="position">美术指导</div>
+            </div>
+          </div>
+          <div class="team-col">
+            <div class="team-li" data-show="enter bottom over .3s after 0.4s">
+              <div class="thumb">
+                <img src="./build/img/team/seven-1.png" alt="">
+              </div>
+              <div class="thumb2">
+                <img src="./build/img/team/seven-2.png" alt="">
+              </div>
+              <div class="name">seven</div>
+              <div class="position">视觉设计师</div>
+            </div>
+            <div class="team-li" data-show="enter bottom over .3s after 0.8s">
+              <div class="thumb">
+                <img src="./build/img/team/anne-1.png" alt="">
+              </div>
+              <div class="thumb2">
+                <img src="./build/img/team/anne-2.png" alt="">
+              </div>
+              <div class="name">anne</div>
+              <div class="position">UI/UED设计师</div>
+            </div>
+            <div class="team-li" data-show="enter bottom over .3s after 1.4s">
+              <div class="thumb">
+                <img src="./build/img/team/niki-1.png" alt="">
+              </div>
+              <div class="thumb2">
+                <img src="./build/img/team/niki-2.png" alt="">
+              </div>
+              <div class="name">niki</div>
+              <div class="position">品牌设计师</div>
+            </div>
+            <div class="team-li" data-show="enter bottom over .3s after 2.0s">
+              <div class="thumb">
+                <img src="./build/img/team/lian-1.png" alt="">
+              </div>
+              <div class="thumb2">
+                <img src="./build/img/team/lian-2.png" alt="">
+              </div>
+              <div class="name">lian</div>
+              <div class="position">前端工程师</div>
+            </div>
+          </div>
+      </div>
     </div> 
-    
-   </section> 
-   <div class="clear"></div> 
+   </section>
+   <div class="clear"></div>
    <!-- portoflio--> 
    <section class="portfolio" id="portfolio"> 
     <div class="portfolio-margin"> 
@@ -91,79 +163,30 @@
      <hr /> 
      <!-- 1 item portoflio--> 
      <ul class="grid"> 
-      <li> <a href="#"> <img src="./build/img/portfolio/1.png" alt="Portfolio item" /> 
-        <div class="text"> 
-         <p>PORTFOLIO 1</p> 
-         <p class="description">Your text here...</p> 
-        </div> </a> </li> 
-      <!-- 2 item portoflio--> 
-      <li> <a href="#"> <img src="./build/img/portfolio/2.png" alt="Portfolio item" /> 
-        <div class="no-text"> 
-         <p></p> 
-         <p class="description"></p> 
-        </div> </a> </li> 
-      <!-- 3 item portoflio--> 
-      <li> <a href="#"> <img src="./build/img/portfolio/3.png" alt="Portfolio item" /> 
-        <div class="no-text"> 
-         <p></p> 
-         <p class="description"></p> 
-        </div> </a> </li> 
-      <!-- 4 item portoflio--> 
-      <li> <a href="#"> <img src="./build/img/portfolio/4.png" alt="Portfolio item" /> 
-        <div class="no-text"> 
-         <p></p> 
-         <p class="description"></p> 
-        </div> </a> </li> 
-      <!-- 5 item portoflio--> 
-      <li> <a href="#"> <img src="./build/img/portfolio/5.png" alt="Portfolio item" /> 
-        <div class="no-text"> 
-         <p></p> 
-         <p class="description"></p> 
-        </div> </a> </li> 
-      <!-- 6 item portoflio--> 
-      <li> <a href="#"> <img src="./build/img/portfolio/6.png" alt="Portfolio item" /> 
-        <div class="text"> 
-         <p>PORTFOLIO 6</p> 
-         <p class="description">Your text here...</p> 
-        </div> </a> </li> 
-      <!-- 7 item portoflio--> 
-      <li> <a href="#"> <img src="./build/img/portfolio/7.png" alt="Portfolio item" /> 
-        <div class="text"> 
-         <p>PORTFOLIO 7</p> 
-         <p class="description">Your text here...</p> 
-        </div> </a> </li> 
-      <!-- 8 item portoflio--> 
-      <li> <a href="#"> <img src="./build/img/portfolio/8.png" alt="Portfolio item" /> 
-        <div class="text"> 
-         <p>PORTFOLIO 8</p> 
-         <p class="description">Your text here...</p> 
-        </div> </a> </li> 
-      <!-- 9 item portoflio--> 
-      <li> <a href="#"> <img src="./build/img/portfolio/9.png" alt="Portfolio item" /> 
-        <div class="text"> 
-         <p>PORTFOLIO 9</p> 
-         <p class="description">Your text here...</p> 
-        </div> </a> </li> 
-      <!-- 10 item portoflio--> 
-      <li> <a href="#"> <img src="./build/img/portfolio/10.png" alt="Portfolio item" /> 
-        <div class="text"> 
-         <p>PORTFOLIO 11</p> 
-         <p class="description">Your text here...</p> 
-        </div> </a> </li> 
-      <!-- 11 item portoflio--> 
-      <li> <a href="#"> <img src="./build/img/portfolio/11.png" alt="Portfolio item" /> 
-        <div class="text"> 
-         <p>PORTFOLIO 11</p> 
-         <p class="description">Your text here...</p> 
-        </div> </a> </li> 
+      <li>
+        <a href="#">
+          <img src="./build/img/case/1.png" alt="" /> 
+          <div class="text"> 
+            <img src="./build/img/case/1-on.png" alt="" /> 
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./build/img/case/2.png" alt="" /> 
+          <div class="text"> 
+            <img src="./build/img/case/2-on.png" alt="" /> 
+          </div>
+        </a>
+      </li>
      </ul> 
-     <a href="#">
+     <a href="javascript:void(0);">
       <div class="read-more">
        Read more
       </div></a> 
     </div> 
-   </section> 
-   <div class="clear"></div> 
+   </section>
+   <div class="clear"></div>
    <!-- partners--> 
    <section class="partners parallax-background-partners" id="partners"> 
     <div class="opacity"></div> 
@@ -172,39 +195,33 @@
      
     </div> 
    </section> 
+   <div class="clear"></div>
    <!-- Contact--> 
    <section class="contact" id="contact"> 
-    <h1>Contact</h1> 
+    <h1 class="title">联系我们</h1> 
+    <h1 class="title-en">CONTACT</h1> 
     <hr /> 
     <div class="content"> 
      <div class="form"> 
-      <form method="post" action="mail.php" name="kontakt"> 
+      <form method="post" action="" name="kontakt"> 
        <div class="column">
-         YOUR NAME
-        <br />
-        <br /> 
-        <input name="name" id="name" value="" /> 
+        <input name="name" id="name" value="" placeholder=" 姓名" /> 
        </div> 
-       <div class="column-2">
-         YOUR E-MAIL
-        <br />
-        <br /> 
-        <input name="email" id="email" value="" /> 
+       <div class="column">
+        <input name="email" id="email" value="" placeholder="邮箱地址" /> 
        </div> 
-       <div class="column-3">
-         MESSAGE
-        <br />
-        <br /> 
+       <div class="column">
         <textarea id="message" name="message"></textarea> 
        </div> 
        <div class="button"> 
-        <span><input class="submit" id="submit" name="submit" type="submit" value="SEND" /></span> 
+        <span><input class="submit" id="submit" name="submit" type="submit" value="发送" /></span> 
        </div> 
       </form> 
      </div> 
      
     </div> 
    </section> 
+   <div class="clear"></div>
    <section class="footer"> 
     <div class="logo">
      YISH DESIGN
