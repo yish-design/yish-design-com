@@ -1,0 +1,29 @@
+
+
+h1 span{
+  color:#2fa68e;
+}
+
+
+::selection {
+  background: #ada074;
+  color:white;
+}
+
+::-moz-selection {
+  background: #ada074;
+  color:white;
+}
+
+
+.container{
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+
+.clear { 
+    clear:both; 
+}
+
+

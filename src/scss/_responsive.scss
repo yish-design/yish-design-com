@@ -1,0 +1,269 @@
+/* iPad (portrait) */
+@media (min-width: 320px) and (max-width: 579px) {
+  .menu {
+    display: none;
+  }
+  .menu-media {
+    display: block;
+  }
+  .start-page {
+    .content {
+      width: 300px;
+      height: 100%;
+    }
+    height: 100%;
+    .opacity {
+      height: 100%;
+    }
+    .content .text {
+      width: 300px;
+    }
+  }
+  h1 {
+    font-size: 36px;
+  }
+  .about-us {
+    h1 {
+      margin-top: 0;
+    }
+    .content {
+      width: 300px;
+    }
+    hr {
+      width: 106px;
+    }
+  }
+  .portfolio .portfolio-margin hr, .contact hr {
+    width: 106px;
+  }
+  .about-us {
+    .column-one, .column-two {
+      width: 300px;
+      margin-bottom: 20px;
+    }
+    .content .column-three {
+      width: 300px;
+      margin-bottom: 70px;
+    }
+  }
+  .portfolio .portfolio-margin {
+    width: 300px;
+  }
+  .partners {
+    .content {
+      width: 300px;
+    }
+    .logo {
+      width: 300px;
+      img {
+        width: 80px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+  .contact {
+    width: 300px;
+    .content {
+      width: 300px;
+      .form {
+        width: 300px;
+      }
+      .contact-text {
+        padding-left: 0px;
+        width: 300px;
+        text-align: center;
+        margin-top: 60px;
+      }
+    }
+  }
+  input, textarea {
+    width: 320px;
+  }
+  .contact .content {
+    .contact-text {
+      width: 275px;
+    }
+    .form {
+      .column, .column-3 {
+        width: 320px;
+      }
+      .column-2 {
+        width: 320px;
+        padding-left: 0;
+      }
+    }
+  }
+  .grid li {
+    margin: 0 0 15px 0;
+  }
+  .contact {
+    margin: 0 auto;
+  }
+  .footer {
+    position: relative;
+  }
+}
+
+/* iPad (portrait) */
+@media (min-width: 580px) and (max-width: 767px) {
+  .menu {
+    display: none;
+  }
+  .menu-media {
+    display: block;
+    .menu-content {
+      width: 540px;
+    }
+  }
+  .partners .logo img {
+    padding-bottom: 20px;
+  }
+  .start-page {
+    .content {
+      width: 300px;
+      height: 100%;
+    }
+    height: 100%;
+    .opacity {
+      height: 100%;
+    }
+    .content .text {
+      width: 300px;
+    }
+  }
+  h1 {
+    font-size: 36px;
+  }
+  .about-us {
+    h1 {
+      margin-top: 0;
+    }
+    .content {
+      width: 300px;
+    }
+    hr {
+      width: 106px;
+    }
+  }
+  .portfolio .portfolio-margin hr, .contact hr {
+    width: 106px;
+  }
+  .about-us {
+    .column-one, .column-two {
+      width: 300px;
+      margin-bottom: 20px;
+    }
+    .column-three {
+      width: 300px;
+      margin-bottom: 70px;
+    }
+  }
+  .portfolio .portfolio-margin {
+    width: 300px;
+  }
+  .partners {
+    .content {
+      width: 400px;
+    }
+    .logo {
+      width: 400px;
+      img {
+        width: 80px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+  .contact {
+    width: 300px;
+    .content {
+      width: 300px;
+      .form {
+        width: 300px;
+      }
+      .contact-text {
+        padding-left: 0px;
+        width: 300px;
+        text-align: center;
+        margin-top: 60px;
+        width: 275px;
+      }
+      .form {
+        .column, .column-3 {
+          width: 420px;
+        }
+        .column-2 {
+          width: 420px;
+          padding-left: 0;
+        }
+      }
+    }
+    margin: 0 auto;
+  }
+  .footer {
+    position: relative;
+  }
+  input, textarea {
+    width: 420px;
+  }
+}
+
+/* iPad (portrait) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .menu-content {
+    .logo {
+      width: 200px;
+    }
+    width: 700px;
+  }
+  .about-us {
+    .content {
+      width: 700px;
+    }
+    p {
+      width: 200px;
+    }
+    h2 {
+      letter-spacing: 2px;
+    }
+    .column-one, .column-two, .column-three {
+      width: 233px;
+    }
+  }
+  .portfolio .portfolio-margin {
+    width: 600px;
+  }
+  .partners {
+    .content, .logo {
+      width: 700px;
+    }
+  }
+  .contact {
+    margin: 0 auto;
+    .content {
+      width: 700px;
+    }
+  }
+  .footer {
+    position: relative;
+  }
+  .contact .content .form {
+    width: 355px;
+  }
+  input, textarea {
+    width: 320px;
+  }
+  .contact .content {
+    .contact-text {
+      width: 275px;
+    }
+    .form {
+      .column, .column-3 {
+        width: 450px;
+      }
+      .column-2 {
+        width: 450px;
+        padding-left: 0;
+      }
+    }
+  }
+}

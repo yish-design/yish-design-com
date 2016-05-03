@@ -1,0 +1,49 @@
+/* zanjs.com - OnePage CSS Responsive theme
+-- version 1.0
+-- Copyright (c) 2016 zanjs.com
+-- licensed under the MIT
+--
+-- http://www.zanjs.com/
+--
+*/
+
+
+
+
+@import 'load';
+
+@import 'startPage';
+
+
+@-webkit-keyframes bounce-fade {
+    0%   { opacity: 0; bottom: 70px; }
+    100% { opacity: 1; bottom: 35px; }
+}
+@-moz-keyframes bounce-fade {
+    0%   { opacity: 0; bottom: 70px; }
+    100% { opacity: 1; bottom: 35px; }
+}
+@-o-keyframes bounce-fade {
+    0%   { opacity: 0; bottom:70px; }
+    100% { opacity: 1; bottom: 35px; }
+}
+@keyframes bounce-fade {
+    0%   { opacity: 0; bottom: 70px; }
+    100% { opacity: 1; bottom: 35px; }
+}
+
+
+
+@import 'menuMobile';
+
+@import 'menu';
+
+@import 'about';
+
+@import 'protfolio';
+
+@import 'partners';
+
+@import 'contact';
+
+@import 'footer';
