@@ -108,5 +108,10 @@ $(function(){
 					reset: true,
 					move: '20px'
 				});
+        
+        
+        $("img.lazy").lazyload({
+         effect : "fadeIn"
+        });
 
 })

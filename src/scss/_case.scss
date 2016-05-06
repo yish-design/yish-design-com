@@ -2,7 +2,48 @@
 .case-wrap{
     position: relative;
     width: 100%;
-    top: -3px;
     background: #eee;
-    padding: 50px 0;    
+    padding: 50px 0;
+    overflow: hidden;
+    z-index: 2;
+}
+.case-desc-wrap{
+    position: relative;
+    font-family: "微软雅黑";
+    .title{
+        font-size: 30px;
+        padding-bottom: 20px; 
+    }
+    .category{
+        font-size: 18px;
+        color: #4d4d4d;
+        font-style: normal;
+    }
+    .contents{
+        font-size: 18px;
+        color: #030303;
+        line-height: 26px;
+        padding-top: 30px;
+        p{
+            font-size: 18px;
+        }
+    }
+}
+
+.case-img-wrap{
+    position: relative;
+    z-index: 2;
+    padding: 30px 0;
+    overflow: hidden;
+    background: #FFF;
+}
+.case-img{
+    .img-d{
+        text-align: center;
+        padding: 28px 0;
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+    }
 }
