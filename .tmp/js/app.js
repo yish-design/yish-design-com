@@ -1,3 +1,46 @@
+/*! echo.js v1.6.0 | (c) 2014 @toddmotto | https://github.com/toddmotto/echo */ ! function(t, e) {
+    "function" == typeof define && define.amd ? define(function() {
+        return e(t)
+    }) : "object" == typeof exports ? module.exports = e : t.echo = e(t)
+}(this, function(t) {
+    "use strict";
+    var e, n, o, r, c, a = {},
+        d = function() {},
+        u = function(t, e) {
+            var n = t.getBoundingClientRect();
+            return n.right >= e.l && n.bottom >= e.t && n.left <= e.r && n.top <= e.b
+        },
+        l = function() {
+            (r || !n) && (clearTimeout(n), n = setTimeout(function() {
+                a.render(), n = null
+            }, o))
+        };
+    return a.init = function(n) {
+        n = n || {};
+        var u = n.offset || 0,
+            i = n.offsetVertical || u,
+            f = n.offsetHorizontal || u,
+            s = function(t, e) {
+                return parseInt(t || e, 10)
+            };
+        e = {
+            t: s(n.offsetTop, i),
+            b: s(n.offsetBottom, i),
+            l: s(n.offsetLeft, f),
+            r: s(n.offsetRight, f)
+        }, o = s(n.throttle, 250), r = n.debounce !== !1, c = !!n.unload, d = n.callback || d, a.render(), document.addEventListener ? (t.addEventListener("scroll", l, !1), t.addEventListener("load", l, !1)) : (t.attachEvent("onscroll", l), t.attachEvent("onload", l))
+    }, a.render = function() {
+        for (var n, o, r = document.querySelectorAll("img[data-echo], [data-echo-background]"), l = r.length, i = {
+                l: 0 - e.l,
+                t: 0 - e.t,
+                b: (t.innerHeight || document.documentElement.clientHeight) + e.b,
+                r: (t.innerWidth || document.documentElement.clientWidth) + e.r
+            }, f = 0; l > f; f++) o = r[f], u(o, i) ? (c && o.setAttribute("data-echo-placeholder", o.src), null !== o.getAttribute("data-echo-background") ? o.style.backgroundImage = "url(" + o.getAttribute("data-echo-background") + ")" : o.src = o.getAttribute("data-echo"), c || o.removeAttribute("data-echo"), d(o, "load")) : c && (n = o.getAttribute("data-echo-placeholder")) && (null !== o.getAttribute("data-echo-background") ? o.style.backgroundImage = "url(" + n + ")" : o.src = n, o.removeAttribute("data-echo-placeholder"), d(o, "unload"));
+        l || a.detach()
+    }, a.detach = function() {
+        document.removeEventListener ? t.removeEventListener("scroll", l) : t.detachEvent("onscroll", l), clearTimeout(n)
+    }, a
+});
 // 获取模块数控
 function getIdDate(md,mo,id,call){
     var query = 'list action=module module='+ mo +' id='+ id;
@@ -107,6 +150,150 @@ http://www.gnu.org/licenses/gpl.html
 	};
 })(jQuery);
 
+// Sticky Plugin v1.0.0 for jQuery
+// =============
+// Author: Anthony Garand
+// Improvements by German M. Bravo (Kronuz) and Ruud Kamphuis (ruudk)
+// Improvements by Leonardo C. Daronco (daronco)
+// Created: 2/14/2011
+// Date: 2/12/2012
+// Website: http://labs.anthonygarand.com/sticky
+// Description: Makes an element on the page stick on the screen as you scroll
+//       It will only set the 'top' and 'position' of your element, you
+//       might need to adjust the width in some cases.
+
+(function($) {
+  var defaults = {
+      topSpacing: 0,
+      bottomSpacing: 0,
+      className: 'is-sticky',
+      wrapperClassName: 'sticky-wrapper',
+      center: false,
+      getWidthFrom: ''
+    },
+    $window = $(window),
+    $document = $(document),
+    sticked = [],
+    windowHeight = $window.height(),
+    scroller = function() {
+      var scrollTop = $window.scrollTop(),
+        documentHeight = $document.height(),
+        dwh = documentHeight - windowHeight,
+        extra = (scrollTop > dwh) ? dwh - scrollTop : 0;
+
+      for (var i = 0; i < sticked.length; i++) {
+        var s = sticked[i],
+          elementTop = s.stickyWrapper.offset().top,
+          etse = elementTop - s.topSpacing - extra;
+
+        if (scrollTop <= etse) {
+          if (s.currentTop !== null) {
+            s.stickyElement
+              .css('position', '')
+              .css('top', '');
+            s.stickyElement.parent().removeClass(s.className);
+            s.currentTop = null;
+          }
+        }
+        else {
+          var newTop = documentHeight - s.stickyElement.outerHeight()
+            - s.topSpacing - s.bottomSpacing - scrollTop - extra;
+          if (newTop < 0) {
+            newTop = newTop + s.topSpacing;
+          } else {
+            newTop = s.topSpacing;
+          }
+          if (s.currentTop != newTop) {
+            s.stickyElement
+              .css('position', 'fixed')
+              .css('top', newTop);
+
+            if (typeof s.getWidthFrom !== 'undefined') {
+              s.stickyElement.css('width', $(s.getWidthFrom).width());
+            }
+
+            s.stickyElement.parent().addClass(s.className);
+            s.currentTop = newTop;
+          }
+        }
+      }
+    },
+    resizer = function() {
+      windowHeight = $window.height();
+    },
+    methods = {
+      init: function(options) {
+        var o = $.extend(defaults, options);
+        return this.each(function() {
+          var stickyElement = $(this);
+
+          var stickyId = stickyElement.attr('id');
+          var wrapper = $('<div></div>')
+            .attr('id', stickyId + '-sticky-wrapper')
+            .addClass(o.wrapperClassName);
+          stickyElement.wrapAll(wrapper);
+
+          if (o.center) {
+            stickyElement.parent().css({width:stickyElement.outerWidth(),marginLeft:"auto",marginRight:"auto"});
+          }
+
+          if (stickyElement.css("float") == "right") {
+            stickyElement.css({"float":"none"}).parent().css({"float":"right"});
+          }
+
+          var stickyWrapper = stickyElement.parent();
+          stickyWrapper.css('height', stickyElement.outerHeight());
+          sticked.push({
+            topSpacing: o.topSpacing,
+            bottomSpacing: o.bottomSpacing,
+            stickyElement: stickyElement,
+            currentTop: null,
+            stickyWrapper: stickyWrapper,
+            className: o.className,
+            getWidthFrom: o.getWidthFrom
+          });
+        });
+      },
+      update: scroller
+    };
+
+  // should be more efficient than using $window.scroll(scroller) and $window.resize(resizer):
+  if (window.addEventListener) {
+    window.addEventListener('scroll', scroller, false);
+    window.addEventListener('resize', resizer, false);
+  } else if (window.attachEvent) {
+    window.attachEvent('onscroll', scroller);
+    window.attachEvent('onresize', resizer);
+  }
+
+  $.fn.sticky = function(method) {
+    if (methods[method]) {
+      return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+    } else if (typeof method === 'object' || !method ) {
+      return methods.init.apply( this, arguments );
+    } else {
+      $.error('Method ' + method + ' does not exist on jQuery.sticky');
+    }
+  };
+  $(function() {
+    setTimeout(scroller, 0);
+  });
+})(jQuery);
+
+/*
+ * Lazy Load - jQuery plugin for lazy loading images
+ *
+ * Copyright (c) 2007-2013 Mika Tuupola
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Project home:
+ *   http://www.appelsiini.net/projects/lazyload
+ *
+ * Version:  1.9.3
+ *
+ */
 
 (function($, window, document, undefined) {
     var $window = $(window);
@@ -121,7 +308,7 @@ http://www.gnu.org/licenses/gpl.html
             effect          : "show",
             container       : window,
             data_attribute  : "load",
-            skip_invisible  : false,
+            skip_invisible  : true,
             appear          : null,
             load            : null,
             placeholder     : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
@@ -172,7 +359,7 @@ http://www.gnu.org/licenses/gpl.html
 
         /* Fire one scroll event per scroll. Not one scroll event per image. */
         if (0 === settings.event.indexOf("scroll")) {
-            $container.on(settings.event, function() {
+            $container.bind(settings.event, function() {
                 return update();
             });
         }
@@ -198,7 +385,8 @@ http://www.gnu.org/licenses/gpl.html
                         settings.appear.call(self, elements_left, settings);
                     }
                     $("<img />")
-                        .one("load", function() {
+                        .bind("load", function() {
+
                             var original = $self.attr("data-" + settings.data_attribute);
                             $self.hide();
                             if ($self.is("img")) {
@@ -222,18 +410,13 @@ http://www.gnu.org/licenses/gpl.html
                             }
                         })
                         .attr("src", $self.attr("data-" + settings.data_attribute));
-                        $self.removeClass("lazy");
-                        setTimeout(function () {
-                            $self.removeAttr("data-" + settings.data_attribute);
-                        },100);
-                        
                 }
             });
 
             /* When wanted event is triggered load original image */
             /* by triggering appear.                              */
             if (0 !== settings.event.indexOf("scroll")) {
-                $self.on(settings.event, function() {
+                $self.bind(settings.event, function() {
                     if (!self.loaded) {
                         $self.trigger("appear");
                     }
@@ -242,14 +425,14 @@ http://www.gnu.org/licenses/gpl.html
         });
 
         /* Check if something appears when window is resized. */
-        $window.on("resize", function() {
+        $window.bind("resize", function() {
             update();
         });
 
         /* With IOS5 force loading images when navigating with back button. */
         /* Non optimal workaround. */
         if ((/(?:iphone|ipod|ipad).*os 5/gi).test(navigator.appVersion)) {
-            $window.on("pageshow", function(event) {
+            $window.bind("pageshow", function(event) {
                 if (event.originalEvent && event.originalEvent.persisted) {
                     elements.each(function() {
                         $(this).trigger("appear");
@@ -348,20 +531,20 @@ $(function(){
           
           
         // Stick menu
-        // $(".menu").sticky({topSpacing:0});
+         $(".menu").sticky({topSpacing:0});
 
 
         // Menu Scroll to content and Active menu
         var lastId,
           topMenu = $("#menu"),
           topMenuHeight = topMenu.outerHeight()+145,
-          menuItems = topMenu.find("a"),
+          menuItems = topMenu.find(".oka"),
           scrollItems = menuItems.map(function(){
             var item = $($(this).attr("href"));
             if (item.length) { return item; }
           });
 
-        $('a[href*=#]').on('click', function(e) {
+        $('.navBox .oka').on('click', function(e) {
             e.preventDefault();
                 
             var target = $(this).attr("href");
@@ -452,8 +635,6 @@ $(function(){
 				});
         
         
-        $("img.lazy").lazyload({
-         effect : "fadeIn"
-        });
+        $("img.lazy").lazyload();
 
 })

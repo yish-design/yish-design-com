@@ -1,3 +1,17 @@
+/*
+ * Lazy Load - jQuery plugin for lazy loading images
+ *
+ * Copyright (c) 2007-2013 Mika Tuupola
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Project home:
+ *   http://www.appelsiini.net/projects/lazyload
+ *
+ * Version:  1.9.3
+ *
+ */
 
 (function($, window, document, undefined) {
     var $window = $(window);
@@ -12,7 +26,7 @@
             effect          : "show",
             container       : window,
             data_attribute  : "load",
-            skip_invisible  : false,
+            skip_invisible  : true,
             appear          : null,
             load            : null,
             placeholder     : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
@@ -63,7 +77,7 @@
 
         /* Fire one scroll event per scroll. Not one scroll event per image. */
         if (0 === settings.event.indexOf("scroll")) {
-            $container.on(settings.event, function() {
+            $container.bind(settings.event, function() {
                 return update();
             });
         }
@@ -89,7 +103,8 @@
                         settings.appear.call(self, elements_left, settings);
                     }
                     $("<img />")
-                        .one("load", function() {
+                        .bind("load", function() {
+
                             var original = $self.attr("data-" + settings.data_attribute);
                             $self.hide();
                             if ($self.is("img")) {
@@ -113,18 +128,13 @@
                             }
                         })
                         .attr("src", $self.attr("data-" + settings.data_attribute));
-                        $self.removeClass("lazy");
-                        setTimeout(function () {
-                            $self.removeAttr("data-" + settings.data_attribute);
-                        },100);
-                        
                 }
             });
 
             /* When wanted event is triggered load original image */
             /* by triggering appear.                              */
             if (0 !== settings.event.indexOf("scroll")) {
-                $self.on(settings.event, function() {
+                $self.bind(settings.event, function() {
                     if (!self.loaded) {
                         $self.trigger("appear");
                     }
@@ -133,14 +143,14 @@
         });
 
         /* Check if something appears when window is resized. */
-        $window.on("resize", function() {
+        $window.bind("resize", function() {
             update();
         });
 
         /* With IOS5 force loading images when navigating with back button. */
         /* Non optimal workaround. */
         if ((/(?:iphone|ipod|ipad).*os 5/gi).test(navigator.appVersion)) {
-            $window.on("pageshow", function(event) {
+            $window.bind("pageshow", function(event) {
                 if (event.originalEvent && event.originalEvent.persisted) {
                     elements.each(function() {
                         $(this).trigger("appear");

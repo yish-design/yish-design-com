@@ -1,5 +1,8 @@
 /* iPad (portrait) */
 @media (min-width: 320px) and (max-width: 579px) {
+  .case-desc-wrap {
+    padding: 0 20px;
+  }
   .menu {
     display: none;
   }
@@ -212,6 +215,9 @@
       width: 200px;
     }
     width: 700px;
+  }
+  .case-desc-wrap{
+    max-width: 700px;
   }
   .about-us {
     .content {

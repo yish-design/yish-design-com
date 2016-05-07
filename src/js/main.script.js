@@ -6,20 +6,20 @@ $(function(){
           
           
         // Stick menu
-        // $(".menu").sticky({topSpacing:0});
+         $(".menu").sticky({topSpacing:0});
 
 
         // Menu Scroll to content and Active menu
         var lastId,
           topMenu = $("#menu"),
           topMenuHeight = topMenu.outerHeight()+145,
-          menuItems = topMenu.find("a"),
+          menuItems = topMenu.find(".oka"),
           scrollItems = menuItems.map(function(){
             var item = $($(this).attr("href"));
             if (item.length) { return item; }
           });
 
-        $('a[href*=#]').on('click', function(e) {
+        $('.navBox .oka').on('click', function(e) {
             e.preventDefault();
                 
             var target = $(this).attr("href");
@@ -110,8 +110,6 @@ $(function(){
 				});
         
         
-        $("img.lazy").lazyload({
-         effect : "fadeIn"
-        });
+        $("img.lazy").lazyload();
 
 })
