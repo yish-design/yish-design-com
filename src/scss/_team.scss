@@ -12,7 +12,7 @@
         width: 152px;
         cursor: pointer;
         position: relative;
-        margin: 30px 0;
+        margin: 20px 0;
         &:hover{
             //  .thumb{
             //      opacity: 0;
@@ -23,32 +23,37 @@
         }
         .thumb{
             width: 152px;
-            height: 142px;
-            line-height: 142px;
+            height: 122px;
+            line-height: 122px;
             overflow: hidden;
             text-align: center;
+            transform:scale(0.66);
         }
         .thumb2{
+            transform:scale(0.66);
             position: absolute;
             left: 0;
             top: 0;
             width: 152px;
-            height: 142px;
-            line-height: 142px;
+            height: 122px;
+            line-height: 122px;
             overflow: hidden;
             text-align: center;
             background: #FFF;
             z-index: 2;
             opacity: 0;
         }
+        img{
+            // transform:scale(0.5);
+        }
         .name{
-            font-size: 20px;
+            font-size: 18px;
             color: #000;
             text-transform: uppercase;
         }
         .position{
-            padding: 30px 0;
-            font-size: 14px;
+            padding: 20px 0;
+            font-size: 12px;
             color: #a4a4a4;
         }
     }
