@@ -1,0 +1,64 @@
+@media (min-width: 768px) and (max-width: 1023px) {
+  .menu-content {
+    .logo {
+      width: 200px;
+    }
+    width: 700px;
+  }
+  .case-desc-wrap{
+    max-width: 700px;
+  }
+  .about-us {
+    .content {
+      width: 700px;
+    }
+    p {
+      width: 200px;
+    }
+    h2 {
+      letter-spacing: 2px;
+    }
+
+  }
+  .portfolio .portfolio-margin {
+    width: 600px;
+  }
+  .partners {
+    .content, .logo {
+      width: 700px;
+    }
+  }
+  .contact {
+    margin: 0 auto;
+    .content {
+      width: 700px;
+    }
+  }
+  .footer {
+    position: relative;
+  }
+  .contact .content .form {
+    width: 355px;
+  }
+  input, textarea {
+    width: 320px;
+  }
+  .contact .content {
+    .contact-text {
+      width: 275px;
+    }
+    .form {
+      .column, .column-3 {
+        width: 334px;
+        
+      }
+      textarea{
+          padding:10px 0;
+      }
+      .column-2 {
+        width: 334px;
+        padding-left: 0;
+      }
+    }
+  }
+}
