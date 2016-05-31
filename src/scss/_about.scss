@@ -1,103 +1,57 @@
 /* About us */
 
-.about-us{
-  position:relative;
-  width:100%;
-  background:white;
-  z-index:10;
-  .content{
-        position:relative;
-        width:900px;
-        margin: 0 auto;
-        overflow: hidden;
-    }
-    h1{
-        font-size:34px;
-        font-weight: 400;
-        color:#222;
-        text-align:center;
-        letter-spacing:6px;
-        text-transform:uppercase;
-        line-height:1.2;
-        
-        &.title{
-            margin-top:100px;
-        }
-        &.title-en{
-            padding-top: 20px;
-            font-size: 24px;
-        }
-    }
-    hr{
-        color:#222;
-        margin-top:30px;
-        background-color: #222;
-        height: 1px;
-        width:106px;
-        border:0;
-    }
-    p{
-        text-align:center;
-        font-size:12px;
-        max-width:430px;
-        margin:30px auto;
-        color:#a4a4a4;
-        line-height:26px;
-        letter-spacing:0;
-        position:relative;
-        font-weight:300;
-        &.title{
-           color: #a4a4a4;
-            margin:40px auto;
-            width:300px;
-            line-height:26px;
-            letter-spacing:0;
-            font-size:14px;
-            font-weight:300;
-            text-align:center; 
-        }
-        
-    }
-    h2{
-        text-align:center;
-        margin-top:50px;
-        font-size:26px;
-        color:black;
-        line-height:1.2;
-        letter-spacing:6px;
-        width:100%;
-        position:relative;
-        font-weight:400;
-    }
-    // .column-one{
-    //     margin-top:40px;
-    //     width:300px;
-    //     float:left;
-    //     margin-bottom:70px;
-    //     height:350px;
-    //     .circle-one{
-    //         height: 100px;
-    //         position:relative;
-    //         margin:0 auto;
-    //         border:2px solid #f0f0f0;
-    //         background: url(../img/icons/responsive.png) white no-repeat center center;
-    //         -moz-border-radius:100px;
-    //         -webkit-border-radius:100px;
-    //         border-radius: 100px;
-    //         width: 100px;
-    //         cursor:pointer;
-    //         -webkit-transition: all 0.2s ease-in;
-    //         -moz-transition: all 0.2s ease-in;
-    //         -ms-transition: all 0.2s ease-in;
-    //         -o-transition: all 0.2s ease-in;
-    //         transition: all 0.2s ease-in;
-            
-    //         &:hover{
-    //             border:2px solid #ada074;
-    //         }
-    //        }
-    // }
+
+
+.about{
+    padding-top: 30px;
     
+    .about-tab{
+        text-align: center;
+        a{
+            font-size: 18px;
+            display: inline-block;
+            padding: 5px;
+            margin: 0 30px;
+            position: relative;
+            &.on{
+                &:before{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: #222;
+                }
+            }
+            
+        }
+    }
+    
+    .about-team{
+        padding-top: 80px;
+    }
+}
+
+
+/* iPhone (5 - 6 plus) */
+@media (min-width: 20px) and (max-width: 579px) {
+  .about{
+        .about-tab{
+            
+            a{
+                margin: 0 10px;
+            }
+            
+        }
+  }
     
 }
 
+
+@import 'aboutTeam';
+
+@import 'aboutValue';
+
+@import 'aboutServices';

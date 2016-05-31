@@ -7,7 +7,7 @@
   
   var winH = window.innerHeight;  
     
-  $("#bangg").css('height',winH/1.2); 
+  $("#bangg").css('height',winH); 
   
   var $banner = $(".banner"),
       $slideBGs = $(".slide__bg"),

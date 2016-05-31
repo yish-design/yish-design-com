@@ -1,0 +1,42 @@
+
+
+.nav{
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    .nav-logo{
+        font-size: 26px;
+        i{
+            font-size: 16px;
+            color: #3c3c3c;
+        }
+    }
+    .nav-u{
+        float: right;
+        // display: inline-block;
+        li{
+            display: inline-block;
+            
+            a{
+                color: #666;
+                padding: 0 30px;
+                &:hover{
+                    color: #ada074;
+                }
+            }
+        }
+    }
+}
+
+/* iPhone (5 - 6 plus) */
+@media (min-width: 20px) and (max-width: 579px) {
+    .nav-logo{
+        display: block;
+        text-align: center;
+        
+    }
+    .nav-u{
+        display: none;
+    }
+    
+}

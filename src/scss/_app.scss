@@ -1,19 +1,12 @@
-/* zanjs.com - OnePage CSS Responsive theme
--- version 1.0
--- Copyright (c) 2016 zanjs.com
--- licensed under the MIT
---
--- http://www.zanjs.com/
---
-*/
-
-
-
 
 @import 'load';
 
 
 @import 'banner';
+
+@import 'nav';
+
+@import 'about';
 
 @-webkit-keyframes bounce-fade {
     0%   { opacity: 0; bottom: 70px; }

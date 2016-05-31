@@ -9,10 +9,10 @@
     }
     .team-li{
         display: inline-block;
-        width: 152px;
+        width: 132px;
         cursor: pointer;
         position: relative;
-        margin: 30px 0;
+        margin: 20px 0;
         &:hover{
             //  .thumb{
             //      opacity: 0;
@@ -21,10 +21,15 @@
                  opacity: 1;
              }
         }
-        .thumb{
-            width: 152px;
-            height: 142px;
-            line-height: 142px;
+        img{
+            max-width: 100%;
+            max-height: 100%;
+            
+        }
+        .thumb,.thumb2{
+            width: 132px;
+            height: 132px;
+            line-height: 122px;
             overflow: hidden;
             text-align: center;
         }
@@ -32,17 +37,12 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 152px;
-            height: 142px;
-            line-height: 142px;
-            overflow: hidden;
-            text-align: center;
             background: #FFF;
             z-index: 2;
             opacity: 0;
         }
         .name{
-            font-size: 26px;
+            font-size: 23px;
             color: #000;
             text-transform: uppercase;
         }
