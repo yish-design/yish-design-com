@@ -12,8 +12,8 @@
 
 @import 'load';
 
-@import 'startPage';
 
+@import 'banner';
 
 @-webkit-keyframes bounce-fade {
     0%   { opacity: 0; bottom: 70px; }
@@ -34,16 +34,4 @@
 
 
 
-@import 'menuMobile';
 
-@import 'menu';
-
-@import 'about';
-
-@import 'protfolio';
-
-@import 'partners';
-
-@import 'contact';
-
-@import 'footer';
