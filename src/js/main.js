@@ -10,7 +10,9 @@ $(function(){
 				move: '20px'
 	});
         
-	ifworkLayout()
+	ifworkLayout();
+	
+	// navFiex();
 		
    window.onresize=function(){
 	   
