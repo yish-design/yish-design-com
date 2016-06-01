@@ -1,0 +1,104 @@
+
+
+.work-wrap{
+    position: relative;
+    min-height: 400px;
+    overflow: hidden;
+    img{
+        max-width: 100%;
+    }
+}
+
+
+.work-floor{
+    font-size:0;
+    position: relative;
+    .imgbox{
+        
+        display: inline-block;
+        
+        text-align: center;
+        a{
+            display: block;
+        }
+        transition:1s;
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+        &:first-of-type{
+             background: #282829;
+        }
+        &:nth-child(2){
+            background: #5D5D5A;
+        }
+        &:nth-child(3){
+            background: #353533;
+        }
+        &:nth-child(4){
+            background: #282829;
+        }
+        &:last-child{
+            background: #3C3E3E;
+        }
+    }
+}
+
+
+
+.work-more{
+    padding-top: 56px;
+    padding-bottom: 110px;
+    text-align: center;
+    .title{
+        font-size: 28px;
+        display: block;
+        padding-bottom: 16px;
+    }
+    .work-more-icon{
+        position: relative;
+        display: inline-block;
+        width: 16px;
+        height: 15px;
+        background: url(../img/other/more.png) no-repeat center center;
+        animation: bounce-fade 1.8s infinite;
+    }
+}
+
+
+/* iPhone (5 - 6 plus) */
+@media (min-width: 20px) and (max-width: 579px) {
+    .work-floor{
+        .imgbox{
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+    }
+}
+
+/* android  (portrait) */
+@media (min-width: 580px) and (max-width: 767px) {
+    
+    .work-floor{
+        .imgbox{
+             position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+    }
+    
+}
+
+/* iPad  (portrait) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+    .work-floor{
+        .imgbox{
+            position: relative;
+            display: inline-block;
+            width: 50%;
+        }
+    }
+    
+}

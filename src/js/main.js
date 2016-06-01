@@ -10,5 +10,11 @@ $(function(){
 				move: '20px'
 	});
         
+	ifworkLayout()
+		
+   window.onresize=function(){
+	   
+      ifworkLayout();
+   }  	
 
 })

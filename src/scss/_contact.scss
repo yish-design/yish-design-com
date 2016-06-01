@@ -1,0 +1,65 @@
+
+
+.contact{
+    padding-top: 68px;
+    padding-bottom: 74px;
+    img{
+        max-width: 100%;
+    }
+}
+
+.contact-content{
+    .labc{
+        padding-bottom: 40px;
+        &:first-of-type{
+            // background: firebrick;
+        }
+        &:nth-child(2){
+            // background: gold;
+        }
+        &:last-child{
+            // background: forestgreen;
+        }
+        p{
+            font-size: 21px;
+            color: #000;
+            
+        }
+    }
+}
+
+
+/* iPhone (5 - 6 plus) */
+@media (min-width: 20px) and (max-width: 579px) {
+  
+  .contact-text,.contact-map{
+      width: 96%;
+  }
+}
+
+/* android  (portrait) */
+@media (min-width: 580px) and (max-width: 767px) {
+    
+ .contact-text,.contact-map{
+      width: 96%;
+    }
+    
+}
+
+/* iPad  (portrait) */
+@media (min-width: 20px) and (max-width: 1023px) {
+    
+    
+    .contact-text{
+        
+        .labc{
+           padding-bottom: 20px; 
+           
+           p{
+            font-size: 18px;
+            }
+        }
+        
+    }
+    
+}

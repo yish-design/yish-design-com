@@ -8,21 +8,29 @@
 
 @import 'about';
 
+@import 'work';
+
+@import 'clients';
+
+@import 'contact';
+
+@import 'footer';
+
 @-webkit-keyframes bounce-fade {
-    0%   { opacity: 0; bottom: 70px; }
-    100% { opacity: 1; bottom: 35px; }
+    0%   { opacity: 0; top: 0; }
+    100% { opacity: 1; top: 15px; }
 }
 @-moz-keyframes bounce-fade {
-    0%   { opacity: 0; bottom: 70px; }
-    100% { opacity: 1; bottom: 35px; }
+    0%   { opacity: 0; top: 0; }
+    100% { opacity: 1; top: 15px; }
 }
 @-o-keyframes bounce-fade {
-    0%   { opacity: 0; bottom:70px; }
-    100% { opacity: 1; bottom: 35px; }
+    0%   { opacity: 0; top: 0; }
+    100% { opacity: 1; top: 15px; }
 }
 @keyframes bounce-fade {
-    0%   { opacity: 0; bottom: 70px; }
-    100% { opacity: 1; bottom: 35px; }
+    0%   { opacity: 0; top: 0; }
+    100% { opacity: 1; top: 15px; }
 }
 
 
