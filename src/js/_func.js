@@ -64,10 +64,30 @@ function workLayoutTwo(ele){
     
       var onPai = Math.ceil((_index+1)/onPaiLen);
       
-      var isL = onPai % 2;
+      var isL = onPai % 2 == 1 ? 0 : f1;
+      
+      
+      var paiIndex = _index - (onPai-1) *  onPaiLen;
+      
+      var paiInPai = Math.ceil((paiIndex)/2);
+      
+      console.log(paiIndex)
+      
+   
+      
+      
+      var backColor = ['111','5D5D5A','353533','282829','3C3E3E']
       
       var _w = glw;
       var _h = glw;
+    //   var _left = (paiIndex+1) * glw + (paiIndex - paiInPai) / 2;
+      var _left = (paiIndex+1) * glw - (paiInPai-1) *  glw * 2 - isL;
+      var _top = glw * 2 * onPai - f1 + (paiInPai * glw - glw);
+      
+      _t.css({'backgroundColor':'#'+backColor[paiInPai]})
+      _t.attr("data-index",_index)
+      _t.attr("data-paiIndex",paiIndex)
+      _t.attr("data-paiInPai",paiInPai)
       
       var isBig = _index % onPaiLen == 0 ? true : false;
        
@@ -75,10 +95,11 @@ function workLayoutTwo(ele){
            
            _w = f1;
            _h = f1;
-           
+           _left = 0 + isL
+           _top = f1 * onPai - f1
        } 
        
-       _t.animate({'width':_w,'height':_h,'left':glw*2},50)
+       _t.animate({'width':_w,'height':_h,'left':_left,'top':_top},50)
        
        
    });
@@ -154,4 +175,19 @@ function navFiex(){
 	});
     
     
+}
+/**
+ * 
+ * 
+ *  */
+ 
+function ImgLoadInit() {
+     echo.init({
+      offset: 10,
+      throttle: 250,
+      unload: false,
+      callback: function (element, op) {
+        console.log(element, 'has been', op + 'ed')
+      }
+    });
 }
