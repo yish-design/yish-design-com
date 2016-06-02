@@ -57,6 +57,8 @@ function workLayoutTwo(ele){
     
     work.css({'height':flooLeng * f1});
     
+   var backColor = ['111','5D5D5A','353533','282829','3C3E3E']
+    
    imgBox.each(function(index){
        
       var _t = $(this);
@@ -74,9 +76,7 @@ function workLayoutTwo(ele){
     //   console.log(paiIndex)
       
    
-      
-      
-      var backColor = ['111','5D5D5A','353533','282829','3C3E3E']
+     
       
       var _w = glw;
       var _h = glw;
@@ -105,16 +105,6 @@ function workLayoutTwo(ele){
    });
 
     
-
-    
-    // $(".imgbox").css({'position':'absolute'})
-    // arrCh.eq(0).css({'position':'absolute','left':0+isL,'width':f1,'height':f1})
-    // arrCh.eq(1).animate({'width':glw,'height':glw,'left':glw*2 - isL},50)
-    // arrCh.eq(2).animate({'width':glw,'height':glw,'left':glw*3 - isL},50)
-    // arrCh.eq(3).animate({'width':glw,'height':glw,'left':glw*2 - isL,'top':glw},50)
-    // arrCh.eq(4).animate({'width':glw,'height':glw,'left':glw*3 - isL,'top':glw},50)
-    
-    
     
 }
 /**
@@ -123,14 +113,30 @@ function workLayoutTwo(ele){
 function workLayoutIpad() {
     var winW = window.innerWidth;
     var glw = winW/2;
-    clearStyle()
-    $(".imgbox").attr('style','').css({'width':glw,'height':glw})
+    clearStyle();
+    
+    
+    var imgBox = $(".imgbox")
+    imgBox.attr('style','').css({'width':glw,'height':glw})
+    
+    var backColor = ['111','5D5D5A','353533','282829','3C3E3E'];
+    
+    
+    imgBox.each(function(e){
+        
+        var _t = $(this);
+        
+        _t.css({'backgroundColor':getRandomColor()})
+        
+        
+    })
+    
     
     
 }
 
 /**
- * 判断是否要布局
+ * 判断是否要布局 
  */
 
 function ifworkLayout() {
@@ -191,3 +197,11 @@ function ImgLoadInit() {
       }
     });
 }
+
+/**
+ * 随机颜色
+ */
+
+function getRandomColor(){ 
+    return "#"+("00000"+((Math.random()*16777215+0.5)>>0).toString(16)).slice(-6); 
+} 
