@@ -76,14 +76,14 @@
     changeSlides();
   }
 
-  $(document).on("mousedown touchstart", ".banner", function(e) {
+  $("#bangg").on("mousedown touchstart", ".banner", function(e) {
     if (animating) return;
     window.clearTimeout(autoSlideTimeout);
     var startX = e.pageX || e.originalEvent.touches[0].pageX,
         winW = $(window).width();
     diff = 0;
     
-    $(document).on("mousemove touchmove", function(e) {
+    $("#bangg").on("mousemove touchmove", function(e) {
       var x = e.pageX || e.originalEvent.touches[0].pageX;
       diff = (startX - x) / winW * 70;
       if ((!curSlide && diff < 0) || (curSlide === numOfSlides && diff > 0)) diff /= 2;
@@ -92,9 +92,9 @@
     });
   });
   
-  $(document).on("mouseup touchend", function(e) {
-    $(document).off("mousemove touchmove");
-     console.log(diff)
+  $("#bangg").on("mouseup touchend", function(e) {
+    $("#bangg").off("mousemove touchmove");
+    //  console.log(diff)
     if (animating) return;
     if (!diff) {
       changeSlides(true);
@@ -113,7 +113,7 @@
     }
   });
   
-  $(document).on("click", ".banner-control", function() {
+  $("#bangg").on("click", ".banner-control", function() {
     if ($(this).hasClass("left")) {
       navigateLeft();
     } else {
@@ -121,7 +121,7 @@
     }
   });
   
-  $(document).on("click", ".banner-pagi__elem", function() {
+  $("#bangg").on("click", ".banner-pagi__elem", function() {
     curSlide = $(this).data("page");
     changeSlides();
   });

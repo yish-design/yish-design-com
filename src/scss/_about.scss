@@ -35,6 +35,42 @@
 }
 
 
+.about-tab-content{
+    min-height: 300px;
+    .about-content{
+        display: none;
+        &.on{
+            display: block;
+        }
+    }
+    .pbr{
+        padding-bottom: 30px;
+    }
+}
+
+.about-radius-box{
+    
+    display: inline-block;
+    width: 148px;
+    height: 148px;
+    border-radius: 50%;
+    border: 2px solid #ccb57b;
+    margin: 0 40px;
+    color: #cdb67d;
+    margin-bottom: 40px;
+    line-height: 24px;
+    &:hover{
+        background: #ccb57b;
+        color: #FFF;
+        
+    }
+    &>div{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
 /* iPhone (5 - 6 plus) */
 @media (min-width: 20px) and (max-width: 579px) {
   .about{

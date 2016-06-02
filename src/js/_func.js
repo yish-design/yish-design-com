@@ -71,7 +71,7 @@ function workLayoutTwo(ele){
       
       var paiInPai = Math.ceil((paiIndex)/2);
       
-      console.log(paiIndex)
+    //   console.log(paiIndex)
       
    
       
