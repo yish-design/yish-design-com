@@ -13,6 +13,7 @@ import concat from 'gulp-concat';
 import notify from 'gulp-notify';
 import babel from 'gulp-babel';
 import browserSync from 'browser-sync';
+import saveLicense from 'uglify-save-license';
 const  reload  = browserSync.create().reload;
 const buildSrc = './build/';
 const minjs = 'app.js';
@@ -33,7 +34,10 @@ gulp.task('scripts',() => {
     return gulp.src('./src/js/*.js')
         .pipe(concat(minjs))
         .pipe(gulp.dest('./.tmp/js'))
-        .pipe(uglify())
+        .pipe(uglify({
+      mangle: false,
+      preserveComments: saveLicense
+    }))
         .pipe(gulp.dest(buildSrc+'/js/'))
         .pipe(browserSync.reload({stream:true}))
         .pipe(notify("Found file: <%= file.relative %>!"));

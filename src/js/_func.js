@@ -1,3 +1,9 @@
+/*! zanjs.com - OnePage CSS Responsive theme
+* version 2.0
+* Copyright (c) 2016 zanjs.com
+* licensed under the MIT
+* http://www.zanjs.com/
+*/
 
 
 /**

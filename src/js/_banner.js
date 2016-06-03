@@ -94,7 +94,7 @@
   
   $("#bangg").on("mouseup touchend", function(e) {
     $("#bangg").off("mousemove touchmove");
-    //  console.log(diff)
+    //  console.log(diffw)
     if (animating) return;
     if (!diff) {
       changeSlides(true);
