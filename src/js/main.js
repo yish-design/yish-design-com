@@ -1,8 +1,8 @@
-$(function(){
+D(function(){
   
 
 
-    $(".preloader").delay(1000).fadeOut("slow");
+    D(".preloader").delay(1000).fadeOut("slow");
 	
 
 	// window.DataShow = new DataShow({
@@ -21,14 +21,14 @@ $(function(){
 
    ImgLoadInit();
    
-   $(".work-wrap").css({"display":"block"})
+   D(".work-wrap").css({"display":"block"})
    
    
-   $(".about-tab").on("click","a",function(e){
-	   var _t = $(this),
+   D(".about-tab").on("click","a",function(e){
+	   var _t = D(this),
 	   	   _p = _t.parent();
 	   	   _index = _t.index(),
-		   manBox = $(".about-tab-content"),
+		   manBox = D(".about-tab-content"),
 		   man = manBox.find(".about-content");
 		
 		_p.children().removeClass('on');
@@ -42,12 +42,12 @@ $(function(){
    });
    
    
-   $(".nav-u").on('click','a',function(e){
-	    var _t = $(this),
+   D(".nav-u").on('click','a',function(e){
+	    var _t = D(this),
 			go = _t.attr('go');
 	   if(go){
 		  
-		  $('html,body').animate({'scrollTop':$(go).offset().top},500);
+		  D('html,body').animate({'scrollTop':D(go).offset().top},500);
 		  
 		  e && e.preventDefault ? e.preventDefault() : window.event.returnValue = false; 
 	   }

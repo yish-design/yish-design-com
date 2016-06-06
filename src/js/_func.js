@@ -31,7 +31,7 @@ function workLayout(ele) {
     
     var isL = cNum == 0 ? 0 : f1;
     
-    $(".imgbox").css({'position':'absolute'})
+    D(".imgbox").css({'position':'absolute'})
     arrCh.eq(0).css({'position':'absolute','left':0+isL,'width':f1,'height':f1})
     arrCh.eq(1).animate({'width':glw,'height':glw,'left':glw*2 - isL},50)
     arrCh.eq(2).animate({'width':glw,'height':glw,'left':glw*3 - isL},50)
@@ -67,7 +67,7 @@ function workLayoutTwo(ele){
     
    imgBox.each(function(index){
        
-      var _t = $(this);
+      var _t = D(this);
       var _index = _t.index();
     
       var onPai = Math.ceil((_index+1)/onPaiLen);
@@ -122,7 +122,7 @@ function workLayoutIpad() {
     clearStyle();
     
     
-    var imgBox = $(".imgbox")
+    var imgBox = D(".imgbox")
     imgBox.attr('style','').css({'width':glw,'height':glw})
     
     var backColor = ['111','5D5D5A','353533','282829','3C3E3E'];
@@ -130,7 +130,7 @@ function workLayoutIpad() {
     
     imgBox.each(function(e){
         
-        var _t = $(this);
+        var _t = D(this);
         
         _t.css({'backgroundColor':getRandomColor()})
         
@@ -150,15 +150,15 @@ function ifworkLayout() {
     
     if(winW > 1023){
         // clearStyle();
-        $(".work-floor").each(function(i){
-   			 workLayoutTwo($(this))
+        D(".work-floor").each(function(i){
+   			 workLayoutTwo(D(this))
  		});
     }else if(winW >= 768 && winW <= 1023){
         workLayoutIpad(); 
        
     }else{
         clearStyle();
-        $(".work-floor div").css({'position':'relative','width':"100%"})
+        D(".work-floor div").css({'position':'relative','width':"100%"})
     } 
 }
 
@@ -166,8 +166,8 @@ function ifworkLayout() {
  * 清除样式
  */
 function clearStyle(){
-    $(".work-floor").attr('style','')
-    $(".imgbox").attr('style','')
+    D(".work-floor").attr('style','')
+    D(".imgbox").attr('style','')
 }
 /**
  * 导航fudge
@@ -176,13 +176,13 @@ function clearStyle(){
 function navFiex(){
     
     
-    $(window).on('scroll',function(){
-		var st = $(document).scrollTop();
+    D(window).on('scroll',function(){
+		var st = D(document).scrollTop();
         var winH = window.innerHeight
 		if( st > winH ){
-			$("#nav-pla").css({'position':'fixed','top':"0",'left':'0','right':'0'})
+			D("#nav-pla").css({'position':'fixed','top':"0",'left':'0','right':'0'})
 		}else{
-			$("#nav-pla").attr('style',"");
+			D("#nav-pla").attr('style',"");
 		}	
 	});
     
