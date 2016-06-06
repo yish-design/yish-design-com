@@ -22,6 +22,8 @@ const  reload  = browserSync.create().reload;
 const buildSrc = './build/';
 const minjs = 'app.js';
 
+const proCss = '/Users/julaud/www/php/mantou/yish/mantob/statics/zanjs/build/css/';
+const proJs = '/Users/julaud/www/php/mantou/yish/mantob/statics/zanjs/build/js/';
 
 const banner = [
   '/*! ',
@@ -42,6 +44,7 @@ gulp.task('sass', () => {
 		.pipe(minifycss())
         .pipe(header(banner, { pkg }))
         .pipe(gulp.dest('./build/css/'))
+        .pipe(gulp.dest(proCss))
         .pipe(browserSync.reload({stream:true}));
 });
 
@@ -52,6 +55,7 @@ gulp.task('scripts',() => {
         .pipe(uglify())
          .pipe(header(banner, { pkg }))
         .pipe(gulp.dest(buildSrc+'/js/'))
+        .pipe(gulp.dest(proJs))
         .pipe(browserSync.reload({stream:true}))
         .pipe(notify("Found file: <%= file.relative %>!"));
 });

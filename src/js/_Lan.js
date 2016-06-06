@@ -1,3 +1,5 @@
+'use strict';
+
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     define(function() {
@@ -6,13 +8,13 @@
   } else if (typeof exports === 'object') {
     module.exports = factory;
   } else {
-    root.echo = factory(root);
+    root.Lan = factory(root);
   }
 })(this, function (root) {
 
-  'use strict';
+  
 
-  var echo = {};
+  var Lan = {};
 
   var callback = function () {};
 
@@ -37,12 +39,12 @@
     }
     clearTimeout(poll);
     poll = setTimeout(function(){
-      echo.render();
+      Lan.render();
       poll = null;
     }, delay);
   };
 
-  echo.init = function (opts) {
+  Lan.init = function (opts) {
     opts = opts || {};
     var offsetAll = opts.offset || 0;
     var offsetVertical = opts.offsetVertical || offsetAll;
@@ -60,7 +62,7 @@
     useDebounce = opts.debounce !== false;
     unload = !!opts.unload;
     callback = opts.callback || callback;
-    echo.render();
+    Lan.render();
     if (document.addEventListener) {
       root.addEventListener('scroll', debounceOrThrottle, false);
       root.addEventListener('load', debounceOrThrottle, false);
@@ -70,8 +72,8 @@
     }
   };
 
-  echo.render = function () {
-    var nodes = document.querySelectorAll('img[data-echo], [data-echo-background]');
+  Lan.render = function () {
+    var nodes = document.querySelectorAll('img[lan], [lan-background]');
     var length = nodes.length;
     var src, elem;
     var view = {
@@ -85,42 +87,42 @@
       if (inView(elem, view)) {
 
         if (unload) {
-          elem.setAttribute('data-echo-placeholder', elem.src);
+          elem.setAttribute('lan-placeholder', elem.src);
         }
 
-        if (elem.getAttribute('data-echo-background') !== null) {
-          elem.style.backgroundImage = "url(" + elem.getAttribute('data-echo-background') + ")";
+        if (elem.getAttribute('lan-background') !== null) {
+          elem.style.backgroundImage = "url(" + elem.getAttribute('lan-background') + ")";
         }
         else {
-          elem.src = elem.getAttribute('data-echo');
+          elem.src = elem.getAttribute('Lan');
         }
 
         if (!unload) {
-          elem.removeAttribute('data-echo');
-          elem.removeAttribute('data-echo-background');
+          elem.removeAttribute('Lan');
+          elem.removeAttribute('lan-background');
         }
 
         callback(elem, 'load');
       }
-      else if (unload && !!(src = elem.getAttribute('data-echo-placeholder'))) {
+      else if (unload && !!(src = elem.getAttribute('lan-placeholder'))) {
 
-        if (elem.getAttribute('data-echo-background') !== null) {
+        if (elem.getAttribute('lan-background') !== null) {
           elem.style.backgroundImage = "url(" + src + ")";
         }
         else {
           elem.src = src;
         }
 
-        elem.removeAttribute('data-echo-placeholder');
+        elem.removeAttribute('lan-placeholder');
         callback(elem, 'unload');
       }
     }
     if (!length) {
-      echo.detach();
+      Lan.detach();
     }
   };
 
-  echo.detach = function () {
+  Lan.detach = function () {
     if (document.removeEventListener) {
       root.removeEventListener('scroll', debounceOrThrottle);
     } else {
@@ -129,6 +131,6 @@
     clearTimeout(poll);
   };
 
-  return echo;
+  return Lan;
 
 });

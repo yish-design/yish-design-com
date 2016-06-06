@@ -10,7 +10,7 @@ D(function(){
 	// 			move: '20px'
 	// });
         
-	ifworkLayout();
+	
 	
 	// navFiex();
 		
